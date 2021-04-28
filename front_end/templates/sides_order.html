@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block body %}
+<img src="https://salemsfresheats.com/wp-content/uploads/2018/03/sides-1-2432x958.jpg" width="150px" heigtht="150px"/>
+<br/>
+<style type="text/css">
+    h1{
+    font-family: inherit;
+    font-size: 2pc;
+    font-style: oblique;
+    }
+    text{font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-size: 1pc;
+    color: red;}
+    .button1{
+    background-color:white;
+    border:4px solid black;
+    color:black;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: table-row;
+    font-size: 16px;
+    margin: 8px 8px;
+    cursor: pointer;
+    } 
+    .button2{
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;   
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 9px #999;
+}
+
+.button2:hover {background-color: #3e8e41}
+
+.button2:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button3 {
+  display: inline-block;
+  border-radius: 2px;
+  background-color: cornflowerblue;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.button3 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button3 span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button3:hover span {
+  padding-right: 25px;
+}
+
+.button3:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+<h1>current customer id {{customer_id}}</h1> 
+
+<form method="POST">
+    <h2>Name :</h2> <input placeholder="enter name" name = "sides_name"class="button1"> 
+    <text>{% if 'sides_name' in errors%}
+      {{errors['sides_name']}}
+    {%endif%} 
+    {% if 'sides_name_type' in errors%}
+      {{errors['sides_name_type']}}
+    {%endif%}</text>
+    <h2>Size : </h2><input placeholder="enter size" name = "sides_size"class="button1">
+    <text>{% if 'sides_size' in errors%}
+      {{errors['sides_size']}}
+    {%endif%} 
+    {% if 'sides_size_type' in errors%}
+      {{errors['sides_size_type']}}
+    {%endif%}</text>
+    <h2>Quantity : </h2><input placeholder="enter quantity" name = "sides_number"class="button1">
+    <text>{% if 'sides_number' in errors%}
+      {{errors['sides_number']}}
+    {%endif%} 
+    {% if 'sides_number_type' in errors%}
+      {{errors['sides_number_type']}}
+    {%endif%}
+    {% if 'sides_limit' in errors%}
+      {{errors['sides_limit']}}
+    {%endif%}</text>
+    <br/>
+    <br/><button type="submit"class="button3"style="vertical-align:middle"><span>Confirm </span></button>
+    
+</form>
+<br/>
+<input type="button"class="button2"value="Display Booking Detail" onclick = "javascript:location.href='{{url_for('customer_booking',customer_id = customer_id)}}'"><br\>
+<input type="button"class="button2"value="Order Mains" onclick = "javascript:location.href='{{url_for('make_mains',customer_id=customer_id)}}'">
+<input type="button"class="button2"value="Order Sundae" onclick = "javascript:location.href='{{url_for('sundae',customer_id=customer_id)}}'">
+<input type="button"class="button2"value="Order Drinks" onclick = "javascript:location.href='{{url_for('drinks',customer_id=customer_id)}}'">
+<input type="button"class="button2"value="View Menu" onclick = "javascript:location.href='{{url_for('menu')}}'">
+
+{%endblock%}

@@ -1,0 +1,53 @@
+
+
+{% extends 'base.html' %}
+{% block body %}
+<img src="https://www.readersdigest.ca/wp-content/uploads/sites/14/2015/11/gourmet-burger-1024x666.jpg" width="450px" heigtht="450px"/>
+<br/>
+<head>
+<style type="text/css">
+
+     h1{background-color: yellow;
+     font-family: Georgia, 'Times New Roman', Times, serif}
+    
+     .button{
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;   
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 9px #999;
+    }
+
+    .button:hover {
+    background-color: #3e8e41
+    }
+
+    .button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    }
+</style>       
+        
+
+</head>
+
+<body>
+        <h1>
+                Welcome to create gourmet!!!
+        </h1>
+</body>
+<br\>
+
+<input class="button"value="Customize" type="button"onclick = "javascript:location.href='{{url_for('create_order')}}'">
+<input class="button"value="Order Base"type="button" onclick = "javascript:location.href='{{url_for('create_base_order')}}'">
+<input class="button"value="Staff Channel"type="button" onclick = "javascript:location.href='{{url_for('staff_login')}}'">
+<input class="button"value="View Your Order"type="button" onclick = "javascript:location.href='{{url_for('search_order')}}'">
+{% endblock %}

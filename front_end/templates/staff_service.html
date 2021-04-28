@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block body %}
+<style type="text/css">
+text{font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 1pc;
+font-style: oblique;}
+.button1{
+    background-color:white;
+    border:4px solid black;
+    color:black;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: table-row;
+    font-size: 16px;
+    margin: 8px 8px;
+    cursor: pointer;
+    } 
+.button2 {
+  display: inline-block;
+  border-radius: 2px;
+  background-color: cornflowerblue;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 12px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button2 span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button2:hover span {
+  padding-right: 25px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button3{
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;   
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: darkkhaki;
+    border: none;
+    border-radius: 5px;
+    
+}
+  p{font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1pc;
+  font-style: oblique;
+  color: red;}
+</style>
+<input type="button"class="button3"value="View All Order" onclick = "javascript:location.href='{{url_for('display_allorder')}}'"><br/>
+<h1>UPDATE ORDER</h1>
+<form method="POST">
+        <text>Customer ID: </text> <br/> <input placeholder="customer id" name = "ID"class="button1">
+        <p>{% if 'ID' in errors%}
+          {{errors['ID']}}
+        {%endif%} 
+        {% if 'ID_type' in errors%}
+          {{errors['ID_type']}}
+        {%endif%}</p>
+        <br/><text>Status: </text>  <br/> <input placeholder="update status" name = "status"class="button1">
+        <p>{% if 'status' in errors%}
+          {{errors['status']}}
+        {%endif%}
+        {% if 'status_type' in errors%}
+          {{errors['status_type']}}
+        {%endif%} </p>
+        <br/>
+        <button type="submit" class="button2"style="vertical-align:middle"><span>Confirm </span></button>
+</form>
+{%endblock%}

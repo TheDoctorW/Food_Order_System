@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block body %}
+<style type="text/css">
+
+    p{
+    font-family: inherit;
+    font-size: 1.5pc;
+    font-style: oblique;
+    }
+    .button{
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;   
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 9px #999;
+    }
+
+    .button:hover {
+    background-color: #3e8e41
+    }
+
+    .button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    }
+</style>
+<p>Your current order id: {{customer_id}}</p>
+
+
+<input type="button"class="button"value="Order Mains" onclick = "javascript:location.href='{{url_for('make_mains',customer_id=customer_id)}}'">
+<input type="button"class="button"value="Order Drinks" onclick = "javascript:location.href='{{url_for('drinks',customer_id=customer_id)}}'">
+<input type="button"class="button"value="Order Sides" onclick = "javascript:location.href='{{url_for('sides',customer_id=customer_id)}}'">
+<input type="button"class="button"value="Order Sundae" onclick = "javascript:location.href='{{url_for('sundae',customer_id=customer_id)}}'">
+
+
+{% endblock %}

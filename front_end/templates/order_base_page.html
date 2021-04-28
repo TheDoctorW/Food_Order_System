@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<style type="text/css">
+    text{font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-size: 1.5pc;
+    }
+    .button{
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;   
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+<text>ID {{customer_id}}:</text>
+
+<input class="button"value="Burger" type="button"onclick = "javascript:location.href='{{url_for('base_burger',customer_id = customer_id)}}'">
+<input class="button"value="Wrap" type="button"onclick = "javascript:location.href='{{url_for('base_wrap',customer_id=customer_id)}}'">
+
+{% endblock %}

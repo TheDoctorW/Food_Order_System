@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    a{font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2pc;
+    text-decoration: none;}
+    a:link{
+        color: black;
+    }
+    a:hover{color: greenyellow;}
+    a:active{color: red;
+    }
+    
+</style>
+<head>
+    <title>Gourmet Creation!!
+    </title>
+</head>
+
+<body>
+
+<!-- Tab Menu -->
+<a href="{{ url_for('home_page') }}">Home</a>
+<br>
+
+<!-- Main Content -->
+{% block body %}{% endblock %}
+
+</body>
+</html>

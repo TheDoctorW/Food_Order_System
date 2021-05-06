@@ -1,4 +1,5 @@
-# Project
+# Food Order System
+UNSW COMP1531 Project
 
 # Background
 

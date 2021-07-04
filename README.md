@@ -1,5 +1,5 @@
 # Food Order System
-UNSW COMP1531 Project
+UNSW COMP1531 Project, simple food order system write by Python and HTML
 
 # Background
 

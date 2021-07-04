@@ -1,6 +1,8 @@
 # Food Order System
 UNSW COMP1531 Project, simple food order system write by Python and HTML
 
+Team Project, original work space please refer to https://github.com/cs1531/gourmet-W-S-M
+
 # Background
 
 Your consultancy firm has been called in to Australia’s largest burger food chain GourmetBurgers for a new software project.   The client is interested in developing an online self-service ordering application.    The client feels that such a system would provide faster delivery of meals to customers, enable customers to build their own gourmet creations which would result in improving the revenue at the different franchises of the food chain.
